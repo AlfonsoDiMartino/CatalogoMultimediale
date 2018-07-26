@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		" http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+		
+<hibernate-configuration>
+    <session-factory>
+        <!-- MySQL Database Connection Settings -->
+        <!-- Decommenta le seguenti se usi MySQL
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/catalogomultimediale</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">PSSS</property>
+        <property name="connection.pool_size">1</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <property name="show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+	-->
+		
+	<!-- PostgreSLQ Database Connection Setting -->
+	<!-- Decommenta le seguenti se usi PostgreSQL -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/catalogomultimediale</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="connection_pool_size">1</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+	<!-- -->
+		
+        <!-- Classi DAO dichiarate come Entity -->
+        <!-- NON TOCCARE! -->
+        <mapping class="Server.DAO.AmministratoreDAO"/>
+        <mapping class="Server.DAO.TipologiaDAO"/>
+        <mapping class="Server.DAO.AutoreDAO"/>
+        <mapping class="Server.DAO.RisorsaDAO"/>
+        <mapping class="Server.DAO.UtenteDAO"/>
+        <mapping class="Server.DAO.CatalogoUtenteDAO"/>
+        <mapping class="Server.DAO.PreferenzaUtenteDAO"/>
+        <mapping class="Server.DAO.DataAcquistoDAO"/>
+        <mapping class="Server.DAO.DataNoleggioDAO"/>
+        
+    </session-factory>
+</hibernate-configuration>
